@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./style/index.css" />
+    <script src="./js/index.js" defer></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Jost"
@@ -14,18 +15,36 @@
   <body>
     <header>
       <nav class="is-flex">
-        <h1 id="web-title">DEVAUR</h1>
+        <a href="index.html"><h1 id="web-title">DEVAUR</h1></a>
         <div class="nav-items-container is-flex">
           <div class="search-box-wrapper is-flex">
             <input type="text" placeholder="Search" />
-            <button><img src="./images/SearchIcon.svg" alt="Search" /></button>
+            <button id="search-button"><img src="./images/SearchIcon.svg" alt="Search" /></button>
           </div>
-          <button class="page-list-wrapper">
-            <img src="./images/PageListIcon.svg" alt="Page List" />
-          </button>
-          <button class="settings-wrapper">
-            <img src="./images/Settings.svg" alt="Settings" />
-          </button>
+          <div class="dropdown-wrapper">
+            <button class="dropdown-button">
+              <img src="./images/PageListIcon.svg" alt="Page List" />
+            </button>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="news.html">News</a></li>
+                <li><a href="">Logs</a></li>
+                <li><a href="">Categories</a></li>
+                <li><a href="">Repository</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-wrapper">
+            <button class="dropdown-button">
+              <img src="./images/Settings.svg" alt="Page List" />
+            </button>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="">Settings</a></li>
+                <li><a href="">Help</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -200,6 +219,5 @@
         </section>
       </main>
     </div>
-    <script src="./js/index.js"></script>
   </body>
 </html>
