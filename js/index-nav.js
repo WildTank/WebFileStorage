@@ -1,5 +1,3 @@
-console.log("Connected!");
-
 const dropdownButton = document.querySelectorAll(".dropdown-button");
 dropdownButton.forEach(button => {
     button.addEventListener("click", () => {
@@ -8,20 +6,21 @@ dropdownButton.forEach(button => {
 })
 
 const dropdownMenus = document.querySelectorAll(".dropdown-menu");
+const ddMenuHideHandler = function (dropdown) {
+    if (dropdown.classList.contains("hide") === false) {
+        dropdown.classList.toggle("hide");
+    }
+}
 document.addEventListener("click", (e) => {
     if (e.target.closest(".dropdown-button") === null) {
         for (let i = 0; i < dropdownMenus.length; i++) {
-            if (dropdownMenus[i].classList.contains("hide") === false) {
-                dropdownMenus[i].classList.toggle("hide");
-            }
+            ddMenuHideHandler(dropdownMenus[i]);
         }
     } else {
         let currentDropdown = e.target.parentElement.nextElementSibling;
         for (let i = 0; i < dropdownMenus.length; i++) {
             if (dropdownMenus[i] !== currentDropdown) {
-                if (dropdownMenus[i].classList.contains("hide") === false) {
-                    dropdownMenus[i].classList.toggle("hide");
-                }
+                ddMenuHideHandler(dropdownMenus[i]);
             }
         }
     }
