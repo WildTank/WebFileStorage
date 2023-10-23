@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style/general.css" />
+    <link rel="stylesheet" type="text/css" href="./style/header-nav.css" />
+    <link rel="stylesheet" type="text/css" href="./style/settings.css" />
+    <script src="./js/index-nav.js" defer></script>
+    <script src="./js/settings.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Jost"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="is-flex">
+        <a href="index.html"><h1 id="web-title">DEVAUR</h1></a>
+        <div class="nav-items-container is-flex">
+          <div class="search-box-wrapper is-flex">
+            <input id="search-bar" type="text" placeholder="Search" />
+            <button id="search-button">
+              <img src="./images/SearchIcon.svg" alt="Search" />
+            </button>
+          </div>
+          <div class="dropdown-wrapper">
+            <button class="dropdown-button">
+              <img src="./images/PageListIcon.svg" alt="Page List" />
+            </button>
+            <div class="dropdown-menu hide" data-dropdown>
+              <ul>
+                <li><a href="news.html">News</a></li>
+                <li><a href="">Logs</a></li>
+                <li><a href="">Categories</a></li>
+                <li><a href="">Repository</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-wrapper">
+            <button class="dropdown-button">
+              <img src="./images/Settings.svg" alt="Page List" />
+            </button>
+            <div class="dropdown-menu hide" data-dropdown>
+              <ul>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="">Help</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="aside-main is-flex">
+      <aside>
+        <section>
+          <ul class="settings-subpages">
+            <li id="settings-preferences" class="subpage active-subpage">
+              Preferences
+            </li>
+            <li id="settings-appearance" class="subpage">Appearance</li>
+          </ul>
+        </section>
+        <section>
+          <ul class="settings-subpages">
+            <li id="settings-account" class="subpage">Account</li>
+            <li id="settings-logout">Log Out</li>
+          </ul>
+        </section>
+      </aside>
+      <main>
+        <section class="main-panel active-panel">A</section>
+        <section class="main-panel">B</section>
+        <section class="main-panel">C</section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -5,6 +5,10 @@ dropdownButton.forEach(button => {
     })
 })
 
+/*
+will make dropdown menus be active one at a time
+also closes dropdown menus when clicking anywhere else
+*/
 const dropdownMenus = document.querySelectorAll(".dropdown-menu");
 const ddMenuHideHandler = function (dropdown) {
     if (dropdown.classList.contains("hide") === false) {

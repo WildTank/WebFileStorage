@@ -1,57 +1,15 @@
-::-webkit-scrollbar {
-    width: 5px;
-}
-::-webkit-scrollbar-track {
-    background: var(--dark-color-fourth);
-  }
-::-webkit-scrollbar-thumb {
-    background: gray;
-}
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Jost";
-    font-size: 16px;
-    color: white;
-}
-h1 {
-    font-size: 24px;
-    letter-spacing: 2px;
-    font-weight: normal;
-}
-ul {
-    list-style-type: none;
-}
-a {
-    text-decoration: none;
-}
-button {
-    all: unset;
-    cursor: pointer;
-}
-button:focus {
-    outline: revert;
-    z-index: 0;
-}
-input:focus {
-    z-index: 0;
-}
-.is-flex {
-    display: flex;
-}
-/* End of pre-styling */
 .aside-main {
     height: calc(100vh - 50px);
 }
 aside {
     padding: 0 10px;
     width: 300px;
-    background-color: var(--dark-color-second);
     overflow-y: auto;
 }
-aside > section:not(:last-child) {
+aside > section {
     padding: 0 15px;
+}
+aside > section:not(:last-child) {
     border-bottom: 1px solid gray;
 }
 .aside-container li {
@@ -64,14 +22,13 @@ aside > section:not(:last-child) {
     padding: 10px;
     background-color: var(--dark-color-third);
 }
-.recent-comment p:first-child {
+.recent-comment > p:first-child {
     margin-bottom: 10px;
     letter-spacing: 2px;
 }
 main {
     width: 100vw;
     overflow-y: auto;
-    background-color: var(--dark-color-second);
 }
 .main-container {
     margin: 20px 25px;

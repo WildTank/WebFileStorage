@@ -15,6 +15,9 @@ nav {
 .nav-items-container > * {
     height: 24px;
 }
+.nav-items-container img {
+    cursor: pointer;
+}
 .search-box-wrapper > input {
     background-color: var(--dark-color-fourth);
     border: none;
@@ -58,18 +61,10 @@ nav {
     top: 100%;
     background-image: linear-gradient(var(--dark-color-second), white);
     opacity: 25%;
-    animation: glow-fade-to-top 0.1s linear forwards;
+    animation: glow-fade-to-top 0.2s linear forwards;
     z-index: -1;
 }
 .dropdown-menu a {
     padding: 10px 10px;
     display: block;
-}
-@keyframes glow-fade-to-top {
-    to {
-        top: 25%;
-    }
-}
-.hide {
-    display: none;
 }

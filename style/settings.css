@@ -1,0 +1,41 @@
+.aside-main {
+    height: calc(100vh - 50px);
+}
+aside {
+    width: 300px;
+    border-right: 1px solid gray;
+}
+aside > section:not(:last-child) {
+    border-bottom: 1px solid white;
+}
+.settings-subpages li {
+    padding: 20px 25px;
+    cursor: pointer;
+    position: relative;
+}
+.settings-subpages li:hover {
+    padding-left: 40px;
+}
+.settings-subpages li:not(.subpage):hover {
+    color: red;
+}
+.active-subpage::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    left: 100%;
+    background-image: linear-gradient(to left, white, var(--dark-color-second));
+    opacity: 25%;
+    animation: glow-fade-to-left 0.2s linear forwards;
+    z-index: -1;
+}
+main {
+    width: 100vw;
+    position: relative;
+}
+.main-panel {
+    display: none;
+}
+.active-panel {
+    display: block;
+}

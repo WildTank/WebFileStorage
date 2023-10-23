@@ -1,0 +1,68 @@
+:root {
+    --dark-color-second: #050505;
+    --dark-color-third: #161616;
+    --dark-color-fourth: #282828;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-color-fourth);
+  }
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Jost";
+    font-size: 16px;
+    color: white;
+}
+body {
+    background-color: var(--dark-color-second);
+}
+h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+button {
+    all: unset;
+    cursor: pointer;
+}
+button:focus {
+    outline: revert;
+    z-index: 0;
+}
+input:focus {
+    z-index: 0;
+}
+.is-flex {
+    display: flex;
+}
+.hide {
+    display: none;
+}
+@keyframes glow-fade-to-top {
+    to {
+        top: 25%;
+    }
+}
+@keyframes glow-fade-to-left {
+    to {
+        left: 0%;
+    }
+}
