@@ -18,14 +18,16 @@
         <a href="index.html"><h1 id="web-title">DEVAUR</h1></a>
         <div class="nav-items-container is-flex">
           <div class="search-box-wrapper is-flex">
-            <input type="text" placeholder="Search" />
-            <button id="search-button"><img src="./images/SearchIcon.svg" alt="Search" /></button>
+            <input id="search-bar" type="text" placeholder="Search" />
+            <button id="search-button">
+              <img src="./images/SearchIcon.svg" alt="Search" />
+            </button>
           </div>
           <div class="dropdown-wrapper">
             <button class="dropdown-button">
               <img src="./images/PageListIcon.svg" alt="Page List" />
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu hide" data-dropdown>
               <ul>
                 <li><a href="news.html">News</a></li>
                 <li><a href="">Logs</a></li>
@@ -38,7 +40,7 @@
             <button class="dropdown-button">
               <img src="./images/Settings.svg" alt="Page List" />
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu hide" data-dropdown>
               <ul>
                 <li><a href="">Settings</a></li>
                 <li><a href="">Help</a></li>
