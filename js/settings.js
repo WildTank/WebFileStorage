@@ -12,3 +12,10 @@ for (let i = 0; i < subpages.length; i++) {
         }
     })
 }
+
+const switches = document.querySelectorAll(".switch");
+for (let i = 0; i < switches.length; i++) {
+    switches[i].addEventListener("click", (e) => {
+        e.target.classList.toggle("active-switch");
+    })
+}

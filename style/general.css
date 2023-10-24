@@ -56,6 +56,10 @@ input:focus {
 .hide {
     display: none;
 }
+.is-circular-container {
+    border-radius: 100%;
+    overflow: hidden;
+}
 @keyframes glow-fade-to-top {
     to {
         top: 25%;

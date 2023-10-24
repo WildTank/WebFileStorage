@@ -71,9 +71,51 @@
         </section>
       </aside>
       <main>
-        <section class="main-panel active-panel">A</section>
-        <section class="main-panel">B</section>
-        <section class="main-panel">C</section>
+        <section class="main-panel active-panel">
+          <div class="main-panel-container">
+            <h1>Preferences</h1>
+            <div class="settings-option">
+              <p>Show Recent News/Comments</p>
+              <div class="switch active-switch"></div>
+            </div>
+            <div class="settings-option">
+              <p>Show Recent Uploads</p>
+              <div class="switch active-switch"></div>
+            </div>
+            <div class="settings-option">
+              <p>Show Recent Media Files</p>
+              <div class="switch active-switch"></div>
+            </div>
+          </div>
+        </section>
+        <section class="main-panel">
+          <div class="main-panel-container">
+            <h1>Appearance</h1>
+            <div class="settings-option">
+              <p>Dark Theme</p>
+              <div class="switch active-switch">
+                <span class="slider"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="main-panel">
+          <div class="main-panel-container">
+            <h1>Account</h1>
+            <div class="settings-option">
+              <p>Logged in as:</p>
+              <div class="account-profile-wrapper is-flex">
+                <p>Guest</p>
+                <img
+                  id="account-profile-image"
+                  class="is-circular-container"
+                  src="./images/FileFrame.png"
+                  alt="profile-image"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   </body>
