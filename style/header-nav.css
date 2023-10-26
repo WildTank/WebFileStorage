@@ -1,6 +1,6 @@
 nav {
     padding: 0 25px;
-    height: 50px;
+    height: var(--header-nav-height);
     background-color: var(--dark-color-second);
     justify-content: space-between;
     align-items: center;

@@ -1,5 +1,5 @@
 .aside-main {
-    height: calc(100vh - 50px);
+    height: calc(100vh - var(--header-nav-height));
 }
 aside {
     width: 300px;
@@ -69,6 +69,9 @@ main {
     height: 34px;
     background-color: var(--dark-color-fourth);
     border-radius: 30px;
+}
+.switch:hover {
+    cursor: pointer;
 }
 .switch::before {
     position: absolute;
