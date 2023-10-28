@@ -1,0 +1,26 @@
+.main-container {
+    width: 100vw;
+    height: calc(100vh - var(--header-nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-wrapper {
+    background-color: var(--dark-color-third);
+    display: grid;
+    grid-template-columns: 240px 65vw;
+}
+.post-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 25px;
+    border-right: 1px solid white;
+}
+.post-description {
+    padding: 20px 25px;
+}
+.post-details > *:not(:last-child),
+.post-description > *:not(:last-child) {
+    padding-bottom: 20px;
+}

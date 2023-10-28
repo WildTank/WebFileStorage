@@ -91,5 +91,5 @@ main {
     transform: translateX(26px);
 }
 .active-switch {
-    background-color: green;
+    background-color: #008600;
 }
