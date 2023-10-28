@@ -8,7 +8,7 @@
 .main-wrapper {
     background-color: var(--dark-color-third);
     display: grid;
-    grid-template-columns: 240px 60vw 50px;
+    grid-template-columns: 240px 60vw 70px;
 }
 .post-details {
     display: flex;
@@ -29,7 +29,7 @@
     text-align: center;
 }
 .post-actions > * {
-    margin: 5px 0;
+    margin: 10px 0;
     cursor: pointer;
 }
 .post-actions > *:hover {
