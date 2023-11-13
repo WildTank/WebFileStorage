@@ -26,4 +26,6 @@ try {
 } catch (ENOENT) {
   console.error("Error: Error No Entity");
   console.log(`Error Note: The extensions may already be ${convertTo} OR the files are not unanimous in extensions`);
+  return 1;
 }
+

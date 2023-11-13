@@ -35,10 +35,18 @@
             </button>
             <div class="dropdown-menu hide" tool>
               <ul>
-                <li><a href="news-archive.php">News</a></li>
-                <li><a href="logs-archive.php">Logs</a></li>
-                <li><a href="modules-archive.php">Modules</a></li>
-                <li><a href="codes-archive.php">Codes </a></li>
+                <li>
+                  <a href="news-archive.php">News</a>
+                </li>
+                <li>
+                  <a href="logs-archive.php">Logs</a>
+                </li>
+                <li>
+                  <a href="modules-archive.php">Modules</a>
+                </li>
+                <li>
+                  <a href="codes-archive.php">Codes </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -48,11 +56,13 @@
             </button>
             <div class="dropdown-menu hide">
               <ul>
-                <li><a href="settings.php">Settings</a></li>
                 <li>
-                  <a href="https://github.com/WildTank/WebFileStorage"
-                    >Repository</a
-                  >
+                  <a href="settings.php">Settings</a>
+                </li>
+                <li>
+                  <a href="https://github.com/WildTank/WebFileStorage">
+                    Repository
+                  </a>
                 </li>
               </ul>
             </div>
