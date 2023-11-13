@@ -56,3 +56,28 @@ main {
     width: 200px;
     height: 200px;
 }
+
+@media screen and (max-width: 1023px) {
+    .aside-main {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+    aside {
+        width: 100vw;
+    }
+    aside > section {
+        border: 1px solid gray;
+        margin-top: 10px;
+    }
+    main > section {
+        text-align: center;
+        border: 1px solid gray;
+        margin: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .files-container {
+        justify-content: space-evenly;
+    }
+}

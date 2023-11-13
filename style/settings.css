@@ -2,7 +2,7 @@
     height: calc(100vh - var(--header-nav-height));
 }
 aside {
-    width: 300px;
+    max-width: 300px;
     border-right: 1px solid gray;
 }
 aside > section:not(:last-child) {
