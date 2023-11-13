@@ -21,7 +21,7 @@
   <body>
     <header>
       <nav class="is-flex">
-        <a href="index.html"><h1 id="web-title">DEVAUR</h1></a>
+        <a href="index.php"><h1 id="web-title">DEVAUR</h1></a>
         <div class="nav-items-container is-flex">
           <div class="search-box-wrapper is-flex">
             <input id="search-bar" type="text" placeholder="Search" />
@@ -35,10 +35,10 @@
             </button>
             <div class="dropdown-menu hide" tool>
               <ul>
-                <li><a href="news-archive.html">News</a></li>
-                <li><a href="logs-archive.html">Logs</a></li>
-                <li><a href="modules-archive.html">Modules</a></li>
-                <li><a href="codes-archive.html">Codes </a></li>
+                <li><a href="news-archive.php">News</a></li>
+                <li><a href="logs-archive.php">Logs</a></li>
+                <li><a href="modules-archive.php">Modules</a></li>
+                <li><a href="codes-archive.php">Codes </a></li>
               </ul>
             </div>
           </div>
@@ -48,7 +48,7 @@
             </button>
             <div class="dropdown-menu hide">
               <ul>
-                <li><a href="settings.html">Settings</a></li>
+                <li><a href="settings.php">Settings</a></li>
                 <li>
                   <a href="https://github.com/WildTank/WebFileStorage"
                     >Repository</a

@@ -16,8 +16,9 @@
 <body>
     <header>
         <nav class="is-flex">
-          <a href="index.php
-          "><h1 id="web-title">DEVAUR</h1></a>
+          <a href="index.php">
+            <h1 id="web-title">DEVAUR</h1>
+          </a>
           <div class="nav-items-container is-flex">
             <div class="search-box-wrapper is-flex">
               <input id="search-bar" type="text" placeholder="Search" />
