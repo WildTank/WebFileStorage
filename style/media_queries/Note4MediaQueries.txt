@@ -1,0 +1,5 @@
+Issue - Media Queries Not Working When Using Local Host: 
+1. Had to seperate media queries to another file
+2. Link tag for media queries must be the last <link> tag in <head>
+
+Note: Seperating the media queries means better organization (bonus)
