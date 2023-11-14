@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px) {
+    .settings-option {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+    .settings-option > :last-child {
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 425px) {
+    aside {
+        width: auto;
+    }
+    .settings-subpages li {
+        padding-left: 10px;
+    }
+    .settings-subpages li:hover {
+        padding-left: 10px;
+        background-color: var(--dark-color-third);
+    }
+}
