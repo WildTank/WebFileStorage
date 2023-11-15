@@ -16,7 +16,7 @@
         margin: 10px;
         width: calc(100vw - 20px);
     }
-    main > section {
+    main > section:not(:last-child) {
         text-align: center;
         margin: 30px;
         border-bottom: 1px solid gray;

@@ -1,0 +1,11 @@
+@media screen and (max-width: 450px) {
+    nav {
+        padding: 0 15px;
+    }
+    .nav-items-container {
+        gap: 15px;
+    }
+    #search-bar {
+        width: 100px;
+    }
+}

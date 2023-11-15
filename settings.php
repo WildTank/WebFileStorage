@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./style/general.css" />
     <link rel="stylesheet" type="text/css" href="./style/header-nav.css" />
     <link rel="stylesheet" type="text/css" href="./style/settings.css" />
+    <link rel="stylesheet" type="text/css" href="./style/media_queries/header-nav-mq.css" />
     <link rel="stylesheet" type="text/css" href="./style/media_queries/settings-mq.css" />
     <script src="./js/header-nav.js" defer></script>
     <script src="./js/settings.js" defer></script>
