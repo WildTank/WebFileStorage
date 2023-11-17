@@ -140,114 +140,68 @@
         </section>
       </aside>
       <main>
+      <?php
+      $file_wrapper_comps = array(
+        '<li class="file-wrapper">',
+        '<img src="./images/FileFrame.png" alt="File Image" />',
+        '<p>File Type</p>',
+        '<p>Upload Time</p>',
+        '</li>'
+      );
+      ?>
         <section>
           <div class="main-container">
-            <h1>Recent Uploads</h1>
-            <ul class="files-container">
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-            </ul>
+            <?php
+            $recent_files_num = 4;
+            if ($recent_files_num > 0) {
+              echo '<h1>Recent Uploads</h1>';
+              echo '<ul class="files-container">';
+              for ($i = 0; $i < $recent_files_num; $i++) {
+                foreach ($file_wrapper_comps as $component) {
+                  echo $component;
+                }
+              }
+              echo '</ul>';
+            }
+            ?>
           </div>
         </section>
         <section>
           <div class="main-container">
-            <h1>Recent Media Files</h1>
-            <ul class="files-container">
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>Upload Time</p>
-              </li>
-            </ul>
+            <?php 
+            $recent_medias_num = 6;
+            if ($recent_medias_num > 0) {
+              echo '<h1>Recent Media Files</h1>';
+              echo '<ul class="files-container">';
+              $media_wrapper_comps = array (
+                '<li class="file-wrapper">',
+                '<img src="./images/FileFrame.png" alt="File Image" />',
+                '<p>Upload Time</p>',
+                '</li>'
+              );
+              for ($i = 0; $i < $recent_medias_num; $i++) {
+                foreach ($media_wrapper_comps as $component) {
+                  echo $component;
+                }
+              }
+              echo '</ul>';
+            }
+            ?>
           </div>
         </section>
         <section>
           <div class="main-container">
-            <h1>All Files (Non-Media)</h1>
-            <ul class="files-container">
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-              <li class="file-wrapper">
-                <img src="./images/FileFrame.png" alt="File Image" />
-                <p>File Type</p>
-                <p>Upload Time</p>
-              </li>
-            </ul>
+            <?php
+            echo '<h1>All Files (Non-Media)</h1>';
+            echo '<ul class="files-container">';
+            $all_files_num = 8;
+            for ($i = 0; $i < $all_files_num; $i++) {
+              foreach($file_wrapper_comps as $component) {
+                echo $component;
+              }
+            }
+            echo '</ul>';
+            ?>
           </div>
         </section>
       </main>
