@@ -11,6 +11,8 @@
       type="text/css"
       href="./style/archive-template.css"
     />
+    <link rel="stylesheet" type="text/css" href="./style/media_queries/header-nav-mq.css" />
+    <link rel="stylesheet" type="text/css" href="./style/media_queries/archive-template-mq.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Jost"

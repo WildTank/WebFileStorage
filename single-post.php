@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./style/general.css" />
     <link rel="stylesheet" type="text/css" href="./style/header-nav.css" />
     <link rel="stylesheet" type="text/css" href="./style/single-post-template.css" />
+    <link rel="stylesheet" type="text/css" href="./style/media_queries/header-nav-mq.css" />
     <script src="./js/header-nav.js" defer></script>
     <link
     rel="stylesheet"
