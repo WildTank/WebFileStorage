@@ -73,78 +73,34 @@
       </nav>
     </header>
     <main>
+    <?php
+      $archive_item_comps = array(
+        '<div class="archive-item-wrapper">',
+        '<img src="./images/FileFrame.png" alt="Item Image" />',
+        '<div class="archive-item-text">',
+        '<p>ITEM TITLE</p>',
+        '<div class="archive-item-description">',
+        "<span>''</span>",
+        '<p>', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex,
+        esse? Quo totam optio, alias ratione exercitationem nam, harum
+        tempora eaque possimus laboriosam non necessitatibus commodi,
+        consectetur odio vitae perspiciatis iure ducimus! Ipsam minima,
+        ullam quis iure minus sint, saepe tempora, rerum facilis vel
+        recusandae nam sequi assumenda magnam consequatur sit.', '</p>',
+        "<span>''</span>",
+        '</div>', '</div>', '</div>'
+      );
+      ?>
       <div class="main-container">
         <h1>Modules and Dependent Programs</h1>
-        <div class="archive-item-wrapper">
-          <img src="./images/FileFrame.png" alt="Item Image" />
-          <div class="archive-item-text">
-            <p>ITEM TITLE</p>
-            <div class="archive-item-description">
-              <span>''</span>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex,
-                esse? Quo totam optio, alias ratione exercitationem nam, harum
-                tempora eaque possimus laboriosam non necessitatibus commodi,
-                consectetur odio vitae perspiciatis iure ducimus! Ipsam minima,
-                ullam quis iure minus sint, saepe tempora, rerum facilis vel
-                recusandae nam sequi assumenda magnam consequatur sit.
-              </p>
-              <span>''</span>
-            </div>
-          </div>
-        </div>
-        <div class="archive-item-wrapper">
-          <img src="./images/FileFrame.png" alt="Item Image" />
-          <div class="archive-item-text">
-            <p>ITEM TITLE</p>
-            <div class="archive-item-description">
-              <span>''</span>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-                esse necessitatibus earum pariatur, vero dignissimos, deleniti
-                eaque voluptatum aut facilis doloribus autem quam aspernatur
-                dolores consequuntur adipisci consequatur placeat in,
-                repudiandae optio. Repudiandae incidunt rem velit. Quibusdam
-                debitis reprehenderit soluta quisquam ipsum recusandae impedit
-                iste. Voluptatem, enim molestias. Laborum, sint! Voluptatum
-                deserunt tempora itaque voluptatem quibusdam consequatur,
-                laborum illum cum molestiae provident repudiandae odit possimus
-                nisi optio neque numquam eligendi totam, a officia? Molestiae,
-                pariatur.
-              </p>
-              <span>''</span>
-            </div>
-          </div>
-        </div>
-        <div class="archive-item-wrapper">
-          <img src="./images/FileFrame.png" alt="Item Image" />
-          <div class="archive-item-text">
-            <p>ITEM TITLE</p>
-            <div class="archive-item-description">
-              <span>''</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptates ab rerum exercitationem a dolorem, doloremque
-                pariatur eligendi ratione rem fugiat sequi accusantium, fugit
-                debitis libero? Cupiditate quos explicabo, natus modi ipsam
-                tempora cumque eaque, mollitia harum similique saepe
-                repellendus, eum ipsum ab? Sint reiciendis cum maxime molestiae
-                ducimus ab dolore praesentium enim ad quam necessitatibus
-                perspiciatis, porro debitis! Tenetur consequuntur voluptate
-                recusandae repellendus commodi quas vero iste accusantium
-                exercitationem maiores. Dolores, repellat? Velit, deleniti
-                consequatur expedita fugit voluptatibus tenetur saepe veritatis
-                eveniet quasi id iste ut ullam eius dolores. Nemo cupiditate
-                numquam ab vero. Sunt temporibus tempora, assumenda, quas nisi
-                ratione eaque fugiat quae perferendis repellat officiis atque
-                aliquam unde harum corrupti eligendi! Neque dolores animi
-                aliquam minus repellendus distinctio commodi voluptate inventore
-                deleniti quos!
-              </p>
-              <span>''</span>
-            </div>
-          </div>
-        </div>
+        <?php
+        $archives_num = 3;
+        for ($i = 0; $i < $archives_num; $i++) {
+          foreach ($archive_item_comps as $component) {
+            echo $component;
+          }
+        }
+        ?>
       </div>
     </main>
   </body>

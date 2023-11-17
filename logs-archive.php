@@ -75,56 +75,31 @@
     <main>
       <div class="main-container">
         <h1>Logs and Changes</h1>
-        <div class="archive-item-wrapper log-entry">
-          <img src="./images/FileFrame.png" alt="Item Image" />
-          <div class="archive-item-text">
-            <p>LOG ENTRY TITLE</p>
-            <div class="archive-item-description">
-              <span>''</span>
-              <ul>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Rem nisi eos rerum quibusdam</li>
-                <li>Aspernatur officia consequatur eum asperiores</li>
-              </ul>
-              <span>''</span>
-            </div>
-          </div>
-        </div>
-        <div class="archive-item-wrapper log-entry">
-          <img src="./images/FileFrame.png" alt="Item Image" />
-          <div class="archive-item-text">
-            <p>LOG ENTRY TITLE</p>
-            <div class="archive-item-description">
-              <span>''</span>
-              <ul>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Rem nisi eos rerum quibusdam</li>
-                <li>Aspernatur officia consequatur eum asperiores</li>
-                <li>Itaque eveniet deserunt at nam</li>
-                <li>Laborum quos voluptatibus obcaecati? Quas</li>
-              </ul>
-              <span>''</span>
-            </div>
-          </div>
-        </div>
-        <div class="archive-item-wrapper log-entry">
-          <img src="./images/FileFrame.png" alt="Item Image" />
-          <div class="archive-item-text">
-            <p>LOG ENTRY TITLE</p>
-            <div class="archive-item-description">
-              <span>''</span>
-              <ul>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Rem nisi eos rerum quibusdam</li>
-                <li>Aspernatur officia consequatur eum asperiores</li>
-                <li>Itaque eveniet deserunt at nam</li>
-                <li>Laborum quos voluptatibus obcaecati? Quas</li>
-                <li>Lorem, ipsum dolor.</li>
-              </ul>
-              <span>''</span>
-            </div>
-          </div>
-        </div>
+        <?php
+        $log_entry_wrapper = array(
+          '<div class="archive-item-wrapper log-entry">',
+          '<img src="./images/FileFrame.png" alt="Item Image" />',
+          '<div class="archive-item-text">',
+          '<p>LOG ENTRY TITLE</p>',
+          '<div class="archive-item-description">',
+          "<span>''</span>",
+          '<ul>',
+          '<li>Lorem ipsum dolor sit amet</li>',
+          '<li>Rem nisi eos rerum quibusdam</li>',
+          '<li>Aspernatur officia consequatur eum asperiores</li>',
+          '<li>Itaque eveniet deserunt at nam</li>',
+          '<li>Laborum quos voluptatibus obcaecati? Quas</li>',
+          '</ul>',
+          "<span>''</span>",
+          '</div>', '</div>', '</div>'
+        );
+        $archives_num = 3;
+        for ($i = 0; $i < $archives_num; $i++) {
+          foreach ($log_entry_wrapper as $component) {
+            echo $component;
+          }
+        }
+        ?>
       </div>
     </main>
   </body>
