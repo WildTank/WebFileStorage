@@ -6,22 +6,23 @@ const htmlPaths = ["./index.html", "./settings.html", "./codes-archive.html", ".
 const phpPaths = ["./index.php", "./settings.php", "./codes-archive.php", "./logs-archive.php",
 "./modules-archive.php", "./news-archive.php", "./single-post.php"];
 
-
 const convertTo = prompt("Convert to 'PHP' or 'HTML': ");
+let current, target, regex, replaceStr;
 
 try {
   if (convertTo == "PHP") {
-    for (i = 0; i < htmlPaths.length; i++) {
-      fs.renameSync(htmlPaths[i], phpPaths[i]);
-      console.log(`${i+1} Switch successful!`);
-    }
+    current = htmlPaths;
+    target = phpPaths;
+    regex = /\.html/g;
+    replaceStr = ".php";
   } else if (convertTo == "HTML") {
-    for (i = 0; i < phpPaths.length; i++) {
-      fs.renameSync(phpPaths[i], htmlPaths[i]);
-      console.log(`${i+1} Switch successful!`);
-    }
+    current = phpPaths;
+    target = htmlPaths;
+    regex = /\.php/g;
+    replaceStr = ".html";
   } else {
     console.log("Please input either of the two.");
+    return 1;
   }
 } catch (ENOENT) {
   console.error("Error: Error No Entity");
@@ -29,19 +30,11 @@ try {
   return 1;
 }
 
-// replaces href links of html code
-if (convertTo == "PHP") {
-  const regex = /\.html/g;
-  for (i = 0; i < htmlPaths.length; i++) {
-    let codeFileString = fs.readFileSync(phpPaths[i]).toString();
-    let commitReplace = codeFileString.replace(regex, ".php");
-    fs.writeFileSync(phpPaths[i], commitReplace);
-  }
-} else if (convertTo == "HTML") {
-  const regex = /\.php/g;
-  for (i = 0; i < htmlPaths.length; i++) {
-    let codeFileString = fs.readFileSync(htmlPaths[i]).toString();
-    let commitReplace = codeFileString.replace(regex, ".html");
-    fs.writeFileSync(htmlPaths[i], commitReplace);
-  }
+for (i = 0; i < current.length; i++) {
+  fs.renameSync(current[i], target[i]);
+  // note: the following operations are done after changing extensions
+  let codeFileString = fs.readFileSync(target[i]).toString();
+  let replace = codeFileString.replace(regex, replaceStr);
+  fs.writeFileSync(target[i], replace);
+  console.log(`${i+1} change successful!`);
 }
