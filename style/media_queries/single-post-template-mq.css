@@ -1,0 +1,25 @@
+@media screen and (max-width: 767px) {
+    .main-wrapper {
+        grid-template-columns: auto auto;
+        grid-template-areas: 
+        "actions"
+        "details"
+        "description";
+        text-align: center;
+        margin: 10px;
+    }
+    .main-wrapper > * {
+        border: 1px solid white;
+    }
+    .post-details {
+        grid-area: details;
+    }
+    .post-description {
+        grid-area: description;
+    }
+    .post-actions {
+        grid-area: actions;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

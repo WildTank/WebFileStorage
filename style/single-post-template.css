@@ -8,7 +8,7 @@
 .main-wrapper {
     background-color: var(--dark-color-third);
     display: grid;
-    grid-template-columns: 240px 60vw 70px;
+    grid-template-columns: auto auto auto;
 }
 .post-details {
     display: flex;
@@ -26,10 +26,12 @@
 }
 .post-actions {
     border-left: 1px solid white;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .post-actions > * {
-    margin: 10px 0;
+    max-width: 50px;
+    margin: 10px;
     cursor: pointer;
 }
 .post-actions > *:hover {
