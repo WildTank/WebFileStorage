@@ -7,8 +7,15 @@
 }
 .main-wrapper {
     background-color: var(--dark-color-third);
+    margin: 10px;
     display: grid;
     grid-template-columns: auto auto auto;
+}
+.main-wrapper > * {
+    border: 1px solid gray;
+}
+.main-wrapper > *:not(:first-child) {
+    border-left: none;
 }
 .post-details {
     display: flex;

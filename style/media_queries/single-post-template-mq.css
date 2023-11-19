@@ -6,10 +6,6 @@
         "details"
         "description";
         text-align: center;
-        margin: 10px;
-    }
-    .main-wrapper > * {
-        border: 1px solid white;
     }
     .post-details {
         grid-area: details;
