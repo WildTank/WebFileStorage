@@ -24,17 +24,16 @@ try {
     console.log("Please input either of the two.");
     return 1;
   }
-} catch (ENOENT) {
-  console.error("Error: Error No Entity");
-  console.log(`Error Note: The extensions may already be ${convertTo} OR the files are not unanimous in extensions`);
-  return 1;
-}
-
-for (i = 0; i < current.length; i++) {
+  for (i = 0; i < current.length; i++) {
   fs.renameSync(current[i], target[i]);
   // note: the following operations are done after changing extensions
   let codeFileString = fs.readFileSync(target[i]).toString();
   let replace = codeFileString.replace(regex, replaceStr);
   fs.writeFileSync(target[i], replace);
   console.log(`${i+1} change successful!`);
+  }
+} catch (ENOENT) {
+  console.error("Error: Error No Entity");
+  console.log(`Error Note: The extensions may already be ${convertTo} OR the files are not unanimous in extensions`);
+  return 1;
 }
