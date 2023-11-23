@@ -194,11 +194,18 @@
             <?php
             echo '<h1>All Files (Non-Media)</h1>';
             echo '<ul class="files-container">';
-            $all_files_num = 8;
-            for ($i = 0; $i < $all_files_num; $i++) {
-              foreach($file_wrapper_comps as $component) {
-                echo $component;
+            $all_files_num = 0;
+            if ($all_files_num > 0) {
+              for ($i = 0; $i < $all_files_num; $i++) {
+                foreach($file_wrapper_comps as $component) {
+                  echo $component;
+                }
               }
+            } else {
+              echo '<li class="zero-files-message">';
+              echo '(*__*)???<br>_/|\_<br>&nbsp&nbsp&nbsp|<br>_/ \_';
+              echo '</li>';
+              echo '<li class="zero-files-message">It\'s a Barren Wasteland</li>';
             }
             echo '</ul>';
             ?>

@@ -91,7 +91,7 @@ main {
     transform: translateX(26px);
 }
 .active-switch {
-    background-color: #008600;
+    background-color: limegreen;
 }
 #login-form {
     width: 100%;
