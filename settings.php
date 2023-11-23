@@ -81,8 +81,15 @@
         </section>
         <section>
           <ul class="settings-subpages">
-            <li id="settings-account" class="subpage">Account</li>
-            <li id="settings-logout">Log Out</li>
+            <?php
+            $logged_in = false;
+            if ($logged_in) {
+              echo '<li id="settings-account" class="subpage">Account</li>';
+              echo '<li id="settings-logout">Log Out</li>';
+            } else {
+              echo '<li id="settings-login">Log In</li>';
+            }
+            ?>
           </ul>
         </section>
       </aside>
@@ -133,6 +140,13 @@
           </div>
         </section>
       </main>
+      <div class="login-form-wrapper is-absolute-center hide">
+        <form id="login-form" action="">
+          <input type="text" id="username" name="user_name" placeholder="Username" required>
+          <input type="password" id="password" name="user_pass" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

@@ -16,9 +16,6 @@ aside > section:not(:last-child) {
 .settings-subpages li:hover {
     padding-left: 40px;
 }
-.settings-subpages li:not(.subpage):hover {
-    color: red;
-}
 .active-subpage::before {
     position: absolute;
     content: "";
@@ -28,6 +25,9 @@ aside > section:not(:last-child) {
     opacity: 25%;
     animation: glow-fade-to-left 0.2s linear forwards;
     z-index: -1;
+}
+#settings-logout:hover {
+    color: red;
 }
 main {
     width: 100vw;
@@ -92,4 +92,50 @@ main {
 }
 .active-switch {
     background-color: #008600;
+}
+#login-form {
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-color-second);
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+}
+#login-form > * {
+    margin-top: 25px;
+}
+#login-form > *:last-child {
+    margin-bottom: 25px;
+}
+#login-form > input {
+    color: black;
+    padding: 0 10px;
+    width: 30vw;
+    height: 2em;
+}
+#login-form > button {
+    border: 1px solid gray;
+    width: 50%;
+    height: 2em;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+#login-form > button:hover {
+    color: black;
+    transition: color 2s;
+}
+#login-form > button::before {
+    position: absolute;
+    content: "";
+    background-color: white;
+    inset: 0;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+}
+#login-form > button:hover::before {
+    transform: scaleX(1);
 }

@@ -19,3 +19,18 @@ for (let i = 0; i < switches.length; i++) {
         e.target.classList.toggle("active-switch");
     })
 }
+
+// login form
+const form = document.querySelector(".login-form-wrapper");
+const formButton = document.querySelector("#settings-login");
+formButton.addEventListener("click", (e) => {
+    form.classList.toggle("hide");
+})
+document.addEventListener("click", (e) => {
+    if (e.target.closest(".login-form-wrapper") === null &&
+        e.target !== formButton) {
+        if (!form.classList.contains("hide")) {
+            form.classList.toggle("hide");
+        }
+    }
+})

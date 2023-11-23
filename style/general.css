@@ -63,6 +63,12 @@ input:focus {
     border-radius: 100%;
     overflow: hidden;
 }
+.is-absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 @keyframes glow-fade-to-top {
     to {
         top: 25%;
