@@ -22,7 +22,7 @@
       <nav class="is-flex">
         <a href="index.php">
           <h1 id="web-title">DEVAUR</h1>
-        </a> <!-- temporarily changed -->
+        </a>
         <div class="nav-items-container is-flex">
           <div class="search-box-wrapper is-flex">
             <input id="search-bar" type="text" placeholder="Search" />
@@ -194,7 +194,7 @@
             <?php
             echo '<h1>All Files (Non-Media)</h1>';
             echo '<ul class="files-container">';
-            $all_files_num = 0;
+            $all_files_num = 8;
             if ($all_files_num > 0) {
               for ($i = 0; $i < $all_files_num; $i++) {
                 foreach($file_wrapper_comps as $component) {
