@@ -1,5 +1,6 @@
 <?php 
 include_once './db-conn.php';
+include_once './session.php';
 
 function validate($data){
   $data = trim($data);
@@ -8,10 +9,6 @@ function validate($data){
 
   return $data;
 }
-
-$_GLOBALS['logged_in'] = false;
-$_GLOBALS['header_label'] = 'DEVAUR';
-$_GLOBALS['user_id'] = 0;
 
 if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
   $user_name = validate($_POST['user_name']);
@@ -24,9 +21,9 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
     if (mysqli_num_rows($result) === 1) {
       $account_row = mysqli_fetch_assoc($result);
       if ($account_row['user_name'] === $user_name && $account_row['user_pass'] === $user_pass) {
-        $_GLOBALS['logged_in'] = true;
-        $_GLOBALS['user_id'] = $account_row['user_id'];
-        $_GLOBALS['header_label'] = $_POST['user_name'] . '#' .$_GLOBALS['user_id'];
+        $_SESSION['logged_in'] = true;
+        $_SESSION['user_id'] = $account_row['user_id'];
+        $_SESSION['header_label'] = $_POST['user_name'] . '(' . $_SESSION['user_id'] . ')';
       }
     } else {
       echo '<script>window.alert("Username or password incorrect.")</script>';
@@ -57,7 +54,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
     <header>
       <nav class="is-flex">
         <a href="index.php"><h1 id="web-title">
-          <?php echo $_GLOBALS['header_label']; ?>
+          <?php echo $_SESSION['header_label']; ?>
         </h1></a>
         <div class="nav-items-container is-flex">
           <div class="search-box-wrapper is-flex">
@@ -120,7 +117,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
         <section>
           <ul class="settings-subpages">
             <?php
-            if ($_GLOBALS['logged_in']) {
+            if ($_SESSION['logged_in']) {
               echo '<li id="settings-account" class="subpage">Account</li>';
               echo '<li id="settings-logout">Log Out</li>';
             } else {

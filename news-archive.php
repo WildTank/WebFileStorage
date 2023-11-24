@@ -1,3 +1,8 @@
+<?php
+include_once './db-conn.php';
+include_once './session.php';;
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

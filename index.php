@@ -1,7 +1,6 @@
 <?php 
 include_once './db-conn.php';
-
-
+include_once './session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +25,7 @@ include_once './db-conn.php';
     <header>
       <nav class="is-flex">
         <a href="index.php">
-          <h1 id="web-title">DEVAUR</h1>
+          <h1 id="web-title"><?php echo $_SESSION['header_label'] ?></h1>
         </a>
         <div class="nav-items-container is-flex">
           <div class="search-box-wrapper is-flex">
