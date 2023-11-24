@@ -1,5 +1,9 @@
 <?php 
 include_once './db-conn.php';
+$header_label = 'DEVAUR';
+if (!empty($_POST['user_name'])) {
+  $header_label = $_POST['user_name'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +27,9 @@ include_once './db-conn.php';
   <body>
     <header>
       <nav class="is-flex">
-        <a href="index.php"><h1 id="web-title">DEVAUR</h1></a>
+        <a href="index.php"><h1 id="web-title">
+          <?php echo $header_label; ?>
+        </h1></a>
         <div class="nav-items-container is-flex">
           <div class="search-box-wrapper is-flex">
             <input id="search-bar" type="text" placeholder="Search" />
@@ -144,7 +150,7 @@ include_once './db-conn.php';
         </section>
       </main>
       <div class="login-form-wrapper is-absolute-center hide">
-        <form id="login-form" action="">
+        <form id="login-form" method="POST">
           <input type="text" id="username" name="user_name" placeholder="Username" required>
           <input type="password" id="password" name="user_pass" placeholder="Password" required>
           <button type="submit">Login</button>
