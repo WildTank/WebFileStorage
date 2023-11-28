@@ -119,7 +119,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             <?php
             if ($_SESSION['logged_in']) {
               echo '<li id="settings-account" class="subpage">Account</li>';
-              echo '<li id="settings-logout">Log Out</li>';
+              echo '<a href="logout.php"><li id="settings-logout">Log Out</li></a>';
             } else {
               echo '<li id="settings-login">Log In</li>';
             }

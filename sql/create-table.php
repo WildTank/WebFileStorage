@@ -20,9 +20,11 @@ submit_query($conn, $tables_query, 'User accounts table successfully created.');
 
 $admin_query = // for admin account
 "INSERT INTO UserAccounts (user_name, user_pass)
-VALUES ('admin', 'devaur2023');";
+VALUES
+('admin', 'devaur2023'), 
+('guest', 'testing123');";
 
-submit_query($conn, $admin_query, 'Admin account successfully added to user accounts table.');
+submit_query($conn, $admin_query, 'Admin and guest accounts account successfully added to user accounts table.');
 
 mysqli_close($conn);
 ?>
