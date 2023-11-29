@@ -76,7 +76,10 @@ include_once './session.php';
       </nav>
     </header>
     <div class="aside-main is-flex">
-      <aside>
+      <?php
+      if ($_SESSION['recent_news_comments'] === '1') {
+        echo
+        '<aside>
         <section>
           <div class="aside-container">
             <p>WELCOME TO DEVAUR!</p>
@@ -142,7 +145,9 @@ include_once './session.php';
             </div>
           </div>
         </section>
-      </aside>
+      </aside>';
+      }
+      ?>
       <main>
       <?php
       $file_wrapper_comps = array(
@@ -157,7 +162,7 @@ include_once './session.php';
           <div class="main-container">
             <?php
             $recent_files_num = 4;
-            if ($recent_files_num > 0) {
+            if ($_SESSION['recent_uploads'] === '1') {
               echo '<h1>Recent Uploads</h1>';
               echo '<ul class="files-container">';
               for ($i = 0; $i < $recent_files_num; $i++) {
@@ -174,7 +179,7 @@ include_once './session.php';
           <div class="main-container">
             <?php 
             $recent_medias_num = 6;
-            if ($recent_medias_num > 0) {
+            if ($_SESSION['recent_media'] === '1') {
               echo '<h1>Recent Media Files</h1>';
               echo '<ul class="files-container">';
               $media_wrapper_comps = array (
@@ -196,7 +201,7 @@ include_once './session.php';
         <section>
           <div class="main-container">
             <?php
-            echo '<h1>All Files (Non-Media)</h1>';
+            echo '<h1>All Files</h1>';
             echo '<ul class="files-container">';
             $all_files_num = 8;
             if ($all_files_num > 0) {
