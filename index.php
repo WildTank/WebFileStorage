@@ -82,11 +82,11 @@ include_once './session.php';
             <p>WELCOME TO DEVAUR!</p>
             <ul>
               <li>
-                ~ An online library that stores files, codes and modules, and 
+                ~ An online library that stores codes, modules, and 
                 other information related to websites and development
               </li>
               <li>
-                ~ Is not supposed to contain private and personal info about
+                ~ This is for public and not supposed to contain private and personal info about
                 anyone and anything
               </li>
             </ul>

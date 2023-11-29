@@ -16,14 +16,26 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
   if (empty($user_name) && empty($user_pass)) {  // handles invalid field inputs
     echo '<script>window.alert("Please enter a valid username and password.")</script>';
   } else {
-    $query = "SELECT * FROM UserAccounts WHERE user_name='$user_name' AND user_pass='$user_pass'";
-    $result = mysqli_query($conn, $query);
-    if (mysqli_num_rows($result) === 1) {
-      $account_row = mysqli_fetch_assoc($result);
+    $accounts_query = "SELECT * FROM UserAccounts WHERE user_name='$user_name' AND user_pass='$user_pass'";
+    $accounts_result = mysqli_query($conn, $accounts_query);
+    if (mysqli_num_rows($accounts_result) === 1) {
+      $account_row = mysqli_fetch_assoc($accounts_result);
       if ($account_row['user_name'] === $user_name && $account_row['user_pass'] === $user_pass) {
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $account_row['user_id'];
+        $_SESSION['user_name'] = $account_row['user_name'];
         $_SESSION['header_label'] = $_POST['user_name'] . '(' . $_SESSION['user_id'] . ')';
+        $settings_query = "SELECT * FROM UserSettings WHERE user_id=$_SESSION[user_id]";
+        $settings_result = mysqli_query($conn, $settings_query);
+        if (mysqli_num_rows($settings_result) === 1) {
+          $settings_values_row = mysqli_fetch_assoc($settings_result);
+          $_SESSION['recent_news_comments'] = $settings_values_row['recent_news_comments'];
+          $_SESSION['recent_uploads'] = $settings_values_row['recent_uploads'];
+          $_SESSION['recent_media'] = $settings_values_row['recent_media'];
+          $_SESSION['dark_theme'] = $settings_values_row['dark_theme'];
+        } else {
+          echo '<script>window.alert("Database Error: No settings values for this account.")</script>';
+        }
       }
     } else {
       echo '<script>window.alert("Username or password incorrect.")</script>';
@@ -133,15 +145,30 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             <h1>Preferences</h1>
             <div class="settings-option">
               <p>Show Recent News/Comments</p>
-              <div class="switch active-switch"></div>
+              <div class="switch
+              <?php
+              if ($_SESSION['recent_news_comments'] === '1') {
+                echo ' active-switch';
+              }
+              ?>"></div>
             </div>
             <div class="settings-option">
               <p>Show Recent Uploads</p>
-              <div class="switch active-switch"></div>
+              <div class="switch
+              <?php
+              if ($_SESSION['recent_uploads'] === '1') {
+                echo ' active-switch';
+              }
+              ?>"></div>
             </div>
             <div class="settings-option">
               <p>Show Recent Media Files</p>
-              <div class="switch active-switch"></div>
+              <div class="switch
+              <?php
+              if ($_SESSION['recent_media'] === '1') {
+                echo ' active-switch';
+              }
+              ?>"></div>
             </div>
           </div>
         </section>
@@ -150,7 +177,12 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             <h1>Appearance</h1>
             <div class="settings-option">
               <p>Dark Theme</p>
-              <div class="switch active-switch">
+              <div class="switch
+              <?php
+              if ($_SESSION['dark_theme'] === '1') {
+                echo ' active-switch';
+              }
+              ?>">
                 <span class="slider"></span>
               </div>
             </div>
@@ -162,7 +194,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             <div class="settings-option">
               <p>Logged in as:</p>
               <div class="account-profile-wrapper is-flex">
-                <p>Guest</p>
+                <p><?php echo $_SESSION['user_name']; ?></p>
                 <img
                   id="account-profile-image"
                   class="is-circular-container"
@@ -176,6 +208,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
       </main>
       <div class="login-form-wrapper is-absolute-center hide">
         <form id="login-form" method="POST">
+          <h1>Enter Account Details</h1>
           <input type="text" id="username" name="user_name" placeholder="Username" required>
           <input type="password" id="password" name="user_pass" placeholder="Password" required>
           <button type="submit">Login</button>
