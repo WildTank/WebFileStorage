@@ -1,14 +1,6 @@
 <?php
 include_once '../db-conn.php';
 
-function submit_query($connection, $query, $message) {
-    if (mysqli_query($connection, $query)) {
-        echo $message . '<br><br>';
-    } else {
-        echo "ERROR: Could not execute $sql. " . mysqli_error($conn);
-    }
-}
-
 $accounts_query = // for user account table
 'CREATE TABLE UserAccounts (
     user_id INT PRIMARY KEY AUTO_INCREMENT,

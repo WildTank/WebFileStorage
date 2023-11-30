@@ -14,7 +14,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
   $user_name = validate($_POST['user_name']);
   $user_pass = validate($_POST['user_pass']);
   if (empty($user_name) && empty($user_pass)) {  // handles invalid field inputs
-    echo '<script>window.alert("Please enter a valid username and password.")</script>';
+    echo '<script>alert("Please enter a valid username and password.")</script>';
   } else {
     $accounts_query = "SELECT * FROM UserAccounts WHERE user_name='$user_name' AND user_pass='$user_pass'";
     $accounts_result = mysqli_query($conn, $accounts_query);
@@ -34,7 +34,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
           $_SESSION['recent_media'] = $settings_values_row['recent_media'];
           $_SESSION['dark_theme'] = $settings_values_row['dark_theme'];
         } else {
-          echo '<script>window.alert("Database Error: No settings values for this account.")</script>';
+          echo '<script>alert("Database Error: No settings values for this account.")</script>';
         }
       }
     } else {
@@ -59,8 +59,50 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Jost"
-    />
+    /> <!-- font: Jost -->
     <title>Devaur - Settings</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"> // jQuery </script>
+    <script> // for AJAX
+      $(document).ready(function() {
+        const switchClassesArr = [
+          "div.rec-news-comms", "div.rec-uploads", "div.rec-media", "div.dark-theme"
+        ];
+        const switchNamesArr = [
+          "recent_news_comments", "recent_uploads", "recent_media", "dark_theme"
+        ];
+        for (let i = 0; i < switchClassesArr.length; i++) {
+          $(switchClassesArr[i]).click(function () {
+            let switchName = switchNamesArr[i];
+            let switchValue;
+            switch (switchNamesArr[i]) {
+              case "recent_news_comments":
+                switchValue = '<?php echo $_SESSION['recent_news_comments'];?>';
+                break;
+              case "recent_uploads":
+                switchValue = '<?php echo $_SESSION['recent_uploads'];?>';
+                break;
+              case "recent_media":
+                switchValue = '<?php echo $_SESSION['recent_media'];?>';
+                break;
+              case "dark_theme":
+                switchValue = '<?php echo $_SESSION['dark_theme'];?>';
+                break;
+              default:
+                alert("Something is wrong with switch names array");
+            }
+            $.post("switch-values.php", {
+              value: switchValue,
+              switch: switchName
+            }, function(data) {
+              console.log(data);
+            });
+          })
+        }
+      });
+    </script> 
   </head>
   <body>
     <header>
@@ -145,7 +187,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             <h1>Preferences</h1>
             <div class="settings-option">
               <p>Show Recent News/Comments</p>
-              <div class="switch
+              <div class="switch rec-news-comms
               <?php
               if ($_SESSION['recent_news_comments'] === '1') {
                 echo ' active-switch';
@@ -154,7 +196,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             </div>
             <div class="settings-option">
               <p>Show Recent Uploads</p>
-              <div class="switch
+              <div class="switch rec-uploads
               <?php
               if ($_SESSION['recent_uploads'] === '1') {
                 echo ' active-switch';
@@ -163,7 +205,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             </div>
             <div class="settings-option">
               <p>Show Recent Media Files</p>
-              <div class="switch
+              <div class="switch rec-media
               <?php
               if ($_SESSION['recent_media'] === '1') {
                 echo ' active-switch';
@@ -177,7 +219,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             <h1>Appearance</h1>
             <div class="settings-option">
               <p>Dark Theme</p>
-              <div class="switch
+              <div class="switch dark-theme
               <?php
               if ($_SESSION['dark_theme'] === '1') {
                 echo ' active-switch';
