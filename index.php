@@ -158,46 +158,40 @@ include_once './session.php';
         '</li>'
       );
       ?>
-        <section>
-          <div class="main-container">
-            <?php
-            $recent_files_num = 4;
-            if ($_SESSION['recent_uploads'] === '1') {
-              echo '<h1>Recent Uploads</h1>';
-              echo '<ul class="files-container">';
-              for ($i = 0; $i < $recent_files_num; $i++) {
-                foreach ($file_wrapper_comps as $component) {
-                  echo $component;
-                }
+        <?php
+          $recent_files_num = 4;
+          if ($_SESSION['recent_uploads'] === '1') {
+            echo '<section><div class="main-container">';
+            echo '<h1>Recent Uploads</h1>';
+            echo '<ul class="files-container">';
+            for ($i = 0; $i < $recent_files_num; $i++) {
+              foreach ($file_wrapper_comps as $component) {
+                echo $component;
               }
-              echo '</ul>';
             }
-            ?>
-          </div>
-        </section>
-        <section>
-          <div class="main-container">
-            <?php 
-            $recent_medias_num = 6;
-            if ($_SESSION['recent_media'] === '1') {
-              echo '<h1>Recent Media Files</h1>';
-              echo '<ul class="files-container">';
-              $media_wrapper_comps = array (
-                '<li class="file-wrapper">',
-                '<img src="./images/FileFrame.png" alt="File Image" />',
-                '<p>Upload Time</p>',
-                '</li>'
-              );
-              for ($i = 0; $i < $recent_medias_num; $i++) {
-                foreach ($media_wrapper_comps as $component) {
-                  echo $component;
-                }
+            echo '</ul></div></section>';
+          }
+        ?>
+        <?php 
+          $recent_medias_num = 6;
+          if ($_SESSION['recent_media'] === '1') {
+            echo '<section><div class="main-container">';
+            echo '<h1>Recent Media Files</h1>';
+            echo '<ul class="files-container">';
+            $media_wrapper_comps = array (
+              '<li class="file-wrapper">',
+              '<img src="./images/FileFrame.png" alt="File Image" />',
+              '<p>Upload Time</p>',
+              '</li>'
+            );
+            for ($i = 0; $i < $recent_medias_num; $i++) {
+              foreach ($media_wrapper_comps as $component) {
+                echo $component;
               }
-              echo '</ul>';
             }
-            ?>
-          </div>
-        </section>
+            echo '</ul></div></section>';
+          }
+        ?>
         <section>
           <div class="main-container">
             <?php
