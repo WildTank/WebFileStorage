@@ -105,7 +105,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
         let currentTheme = "<?php echo $_SESSION['dark_theme'];?>";
         $("div.dark-theme").click(function() {
           let targetColor = currentTheme==="1" ? "black" : "white";
-          $("*").css("color", targetColor);
+          $("*:not(input)").css("color", targetColor);
           $("svg path").css("fill", targetColor);
           if (currentTheme === '1') {
             $(":root").css({

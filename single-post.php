@@ -14,6 +14,9 @@
     href="https://fonts.googleapis.com/css?family=Jost"
     />
     <title>Single Post Template</title>
+    <?php
+    include_once './theme.php'; // handles theme
+    ?>
 </head>
 <body>
     <header>
@@ -25,12 +28,12 @@
             <div class="search-box-wrapper is-flex">
               <input id="search-bar" type="text" placeholder="Search" />
               <button id="search-button">
-                <img src="./images/SearchIcon.svg" alt="Search" />
+                <?php include_once './images/SearchIcon.svg'?>
               </button>
             </div>
             <div class="dropdown-wrapper">
               <button class="dropdown-button" title="Archives">
-                <img src="./images/PageListIcon.svg" alt="Page List" />
+                <?php include_once './images/PageListIcon.svg'?>
               </button>
               <div class="dropdown-menu hide" tool>
                 <ul>
@@ -51,7 +54,7 @@
             </div>
             <div class="dropdown-wrapper">
               <button class="dropdown-button" title="Settings">
-                <img src="./images/Settings.svg" alt="Page List" />
+                <?php include_once './images/Settings.svg'?>
               </button>
               <div class="dropdown-menu hide">
                 <ul>
