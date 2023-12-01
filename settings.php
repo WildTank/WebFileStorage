@@ -101,8 +101,28 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
             });
           })
         }
+        // for dark theme switch
+        let currentTheme = "<?php echo $_SESSION['dark_theme'];?>";
+        $("div.dark-theme").click(function() {
+          let targetColor = currentTheme==="1" ? "black" : "white";
+          $("*").css("color", targetColor);
+          $("svg path").css("fill", targetColor);
+          if (currentTheme === '1') {
+            $(":root").css({
+            "--dark-color-second":"#fafafa", "--dark-color-third":"#e9e9e9", "--dark-color-fourth":"#d7d7d7"
+          });
+          } else {
+            $(":root").css({
+            "--dark-color-second":"#050505", "--dark-color-third":"#161616", "--dark-color-fourth":"#282828"
+          });
+          }
+          currentTheme = currentTheme==="1" ? "0" : "1";
+        });
       });
     </script> 
+    <?php
+    include_once './theme.php'; // handles theme
+    ?>
   </head>
   <body>
     <header>
@@ -114,12 +134,12 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
           <div class="search-box-wrapper is-flex">
             <input id="search-bar" type="text" placeholder="Search" />
             <button id="search-button">
-              <img src="./images/SearchIcon.svg" alt="Search" />
+              <?php include_once './images/SearchIcon.svg'?>
             </button>
           </div>
           <div class="dropdown-wrapper">
             <button class="dropdown-button" title="Archives">
-              <img src="./images/PageListIcon.svg" alt="Page List" />
+              <?php include_once './images/PageListIcon.svg'?>
             </button>
             <div class="dropdown-menu hide" tool>
               <ul>
@@ -140,7 +160,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
           </div>
           <div class="dropdown-wrapper">
             <button class="dropdown-button" title="Settings">
-              <img src="./images/Settings.svg" alt="Page List" />
+              <?php include_once './images/Settings.svg'?>
             </button>
             <div class="dropdown-menu hide">
               <ul>
