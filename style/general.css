@@ -53,6 +53,12 @@ button:focus {
 input:focus {
     z-index: 0;
 }
+svg {
+    cursor: pointer;
+}
+path {
+    pointer-events: none;
+}
 .is-flex {
     display: flex;
 }

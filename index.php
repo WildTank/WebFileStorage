@@ -20,6 +20,9 @@ include_once './session.php';
       href="https://fonts.googleapis.com/css?family=Jost"
     />
     <title>Devaur - Home</title>
+    <?php
+    include_once './theme.php'; // handles theme
+    ?>
   </head>
   <body>
     <header>
@@ -31,12 +34,12 @@ include_once './session.php';
           <div class="search-box-wrapper is-flex">
             <input id="search-bar" type="text" placeholder="Search" />
             <button id="search-button">
-              <img src="./images/SearchIcon.svg" alt="Search" />
+              <?php include_once './images/SearchIcon.svg'?>
             </button>
           </div>
           <div class="dropdown-wrapper">
             <button class="dropdown-button" title="Archives">
-              <img src="./images/PageListIcon.svg" alt="Page List" />
+              <?php include_once './images/PageListIcon.svg'?>
             </button>
             <div class="dropdown-menu hide" tool>
               <ul>
@@ -57,7 +60,7 @@ include_once './session.php';
           </div>
           <div class="dropdown-wrapper">
             <button class="dropdown-button" title="Settings">
-              <img src="./images/Settings.svg" alt="Page List" />
+              <?php include_once './images/Settings.svg'?>
             </button>
             <div class="dropdown-menu hide">
               <ul>
@@ -158,46 +161,40 @@ include_once './session.php';
         '</li>'
       );
       ?>
-        <section>
-          <div class="main-container">
-            <?php
-            $recent_files_num = 4;
-            if ($_SESSION['recent_uploads'] === '1') {
-              echo '<h1>Recent Uploads</h1>';
-              echo '<ul class="files-container">';
-              for ($i = 0; $i < $recent_files_num; $i++) {
-                foreach ($file_wrapper_comps as $component) {
-                  echo $component;
-                }
+        <?php
+          $recent_files_num = 4;
+          if ($_SESSION['recent_uploads'] === '1') {
+            echo '<section><div class="main-container">';
+            echo '<h1>Recent Uploads</h1>';
+            echo '<ul class="files-container">';
+            for ($i = 0; $i < $recent_files_num; $i++) {
+              foreach ($file_wrapper_comps as $component) {
+                echo $component;
               }
-              echo '</ul>';
             }
-            ?>
-          </div>
-        </section>
-        <section>
-          <div class="main-container">
-            <?php 
-            $recent_medias_num = 6;
-            if ($_SESSION['recent_media'] === '1') {
-              echo '<h1>Recent Media Files</h1>';
-              echo '<ul class="files-container">';
-              $media_wrapper_comps = array (
-                '<li class="file-wrapper">',
-                '<img src="./images/FileFrame.png" alt="File Image" />',
-                '<p>Upload Time</p>',
-                '</li>'
-              );
-              for ($i = 0; $i < $recent_medias_num; $i++) {
-                foreach ($media_wrapper_comps as $component) {
-                  echo $component;
-                }
+            echo '</ul></div></section>';
+          }
+        ?>
+        <?php 
+          $recent_medias_num = 6;
+          if ($_SESSION['recent_media'] === '1') {
+            echo '<section><div class="main-container">';
+            echo '<h1>Recent Media Files</h1>';
+            echo '<ul class="files-container">';
+            $media_wrapper_comps = array (
+              '<li class="file-wrapper">',
+              '<img src="./images/FileFrame.png" alt="File Image" />',
+              '<p>Upload Time</p>',
+              '</li>'
+            );
+            for ($i = 0; $i < $recent_medias_num; $i++) {
+              foreach ($media_wrapper_comps as $component) {
+                echo $component;
               }
-              echo '</ul>';
             }
-            ?>
-          </div>
-        </section>
+            echo '</ul></div></section>';
+          }
+        ?>
         <section>
           <div class="main-container">
             <?php

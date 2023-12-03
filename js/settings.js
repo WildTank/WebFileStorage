@@ -23,9 +23,13 @@ for (let i = 0; i < switches.length; i++) {
 // login form
 const form = document.querySelector(".login-form-wrapper");
 const formButton = document.querySelector("#settings-login");
-formButton.addEventListener("click", (e) => {
-    form.classList.toggle("hide");
-})
+try {
+    formButton.addEventListener("click", (e) => {
+        form.classList.toggle("hide");
+    })
+} catch (err) {
+    console.log("Probably sign in successful...");
+}
 document.addEventListener("click", (e) => {
     if (e.target.closest(".login-form-wrapper") === null &&
         e.target !== formButton) {
