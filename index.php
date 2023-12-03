@@ -14,7 +14,6 @@ include_once './session.php';
     <link rel="stylesheet" type="text/css" href="./style/media_queries/header-nav-mq.css" />
     <link rel="stylesheet" type="text/css" href="./style/media_queries/index-mq.css" />
     <script src="./js/header-nav.js" defer></script>
-    <script src="./js/search.js" defer></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Jost"

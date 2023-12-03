@@ -32,7 +32,7 @@ try {
 }
 document.addEventListener("click", (e) => {
     if (e.target.closest(".login-form-wrapper") === null &&
-        e.target !== formButton) {
+        e.target !== formButton && !e.target.classList.contains("dark-theme")) {
         if (!form.classList.contains("hide")) {
             form.classList.toggle("hide");
         }

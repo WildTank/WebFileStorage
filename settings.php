@@ -110,7 +110,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
           $("svg path").css("fill", targetColor);
           if (currentTheme === '1') {
             $(":root").css({
-            "--dark-color-second":"#fafafa", "--dark-color-third":"#e9e9e9", "--dark-color-fourth":"#d7d7d7"
+            "--dark-color-second":"#fafafa", "--dark-color-third":"#d9d9d9", "--dark-color-fourth":"#b7b7b7"
           });
           } else {
             $(":root").css({
