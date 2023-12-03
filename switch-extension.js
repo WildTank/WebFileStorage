@@ -1,3 +1,5 @@
+// WARNING: NO LONGER USABLE SINCE PHP IMPLEMENTATION TO MAIN PAGES!!!
+// This file is kept here for future reference (especially about regex)
 const fs = require("fs");
 const prompt = require("prompt-sync")({ sigint: true });
 

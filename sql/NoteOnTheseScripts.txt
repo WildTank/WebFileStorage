@@ -1,0 +1,2 @@
+Run create-table.php script for admin and guest account
+You can just go to 'localhost/WebFileStorage/sql'
