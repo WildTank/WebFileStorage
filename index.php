@@ -79,10 +79,12 @@ include_once './session.php';
     </header>
     <div class="aside-main is-flex">
       <?php
-      if ($_SESSION['recent_news_comments'] === '1') {
-        echo
-        '<aside>
-        <section>
+      if ($_SESSION['recent_news_comments'] !== '1') {
+        echo '<style>aside{display:none;}</style>';
+      }
+      ?>
+      <aside>
+      <section>
           <div class="aside-container">
             <p>WELCOME TO DEVAUR!</p>
             <ul>
@@ -101,10 +103,17 @@ include_once './session.php';
           <div class="aside-container">
             <p>LATEST NEWS</p>
             <ul>
-              <li>
-                ~ Newly created the website as a way to store files, and both
-                independent and dependent codes
-              </li>
+              <?php
+              $news_query = "SELECT * FROM NewsAnnouncements";
+              $result = $conn->query($news_query);
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  echo '<li>';
+                  echo $row['details'];
+                  echo '</li>';
+                }
+              }
+              ?>
             </ul>
           </div>
         </section>
@@ -147,9 +156,7 @@ include_once './session.php';
             </div>
           </div>
         </section>
-      </aside>';
-      }
-      ?>
+      </aside>
       <main>
       <?php
       $file_wrapper_comps = array(
@@ -162,7 +169,7 @@ include_once './session.php';
       ?>
         <?php
           $recent_files_num = 4;
-          if ($_SESSION['recent_uploads'] === '1') {
+          if ($_SESSION['recent_uploads'] === '1' && $recent_files_num > 0) {
             echo '<section><div class="main-container">';
             echo '<h1>Recent Uploads</h1>';
             echo '<ul class="files-container">';
@@ -176,7 +183,7 @@ include_once './session.php';
         ?>
         <?php 
           $recent_medias_num = 6;
-          if ($_SESSION['recent_media'] === '1') {
+          if ($_SESSION['recent_media'] === '1' && $recent_medias_num > 0) {
             echo '<section><div class="main-container">';
             echo '<h1>Recent Media Files</h1>';
             echo '<ul class="files-container">';

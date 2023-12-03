@@ -37,5 +37,21 @@ VALUES
 submit_query($conn, $settings_values_query, 'Default account\'s settings set to default.');
 
 
+$news_query = // for news announcements table
+'CREATE TABLE NewsAnnouncements (
+    issue_number INT PRIMARY KEY AUTO_INCREMENT,
+    details TEXT
+);';
+submit_query($conn, $news_query, 'Successfully added news and announcements table');
+
+
+$news_article_query = // for default news article
+'INSERT INTO NewsAnnouncements (details)
+VALUES
+("~ This news is for testing and acts as a dummy article<br><br>~ Second portion of dummy news article :D"),
+("~ Newly created the website as a way to store both independent and dependent codes");';
+submit_query($conn, $news_article_query, 'Default news articles added.');
+
+
 mysqli_close($conn);
 ?>
