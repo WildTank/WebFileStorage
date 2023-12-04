@@ -104,7 +104,7 @@ include_once './session.php';
             <p>LATEST NEWS</p>
             <ul>
               <?php
-              $news_query = "SELECT * FROM NewsAnnouncements";
+              $news_query = "SELECT * FROM NewsAnnouncements;";
               $result = $conn->query($news_query);
               if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -122,36 +122,21 @@ include_once './session.php';
             <p>RECENT COMMENTS</p>
             <div class="recent-comments-wrapper">
               <ul>
-                <li>
-                  <div class="recent-comment">
-                    <p>Guest</p>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="recent-comment">
-                    <p>User</p>
-                    <p>Quia ex at atque odit.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="recent-comment">
-                    <p>Anonymous</p>
-                    <p>Odio aspernatur repellendus excepturi repudiandae!</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="recent-comment">
-                    <p>Anon</p>
-                    <p>Soluta nemo labore temporibus dolorem.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="recent-comment">
-                    <p>Owner</p>
-                    <p>Ducimus nulla provident tempora deleniti!</p>
-                  </div>
-                </li>
+                <?php
+                $comments_query = "SELECT * FROM Comments;";
+                $result = $conn->query($comments_query);
+                if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                    echo '<li><div class="recent-comment">';
+                    $commenter_query = "SELECT user_name FROM useraccounts WHERE user_id=$row[commenter_id]";
+                    // query is goofy, must use double quotes
+                    $commenter_result = $conn->query($commenter_query);
+                    echo '<p>' . $commenter_result->fetch_assoc()['user_name'] . '</p>';
+                    echo '<p>' . $row['comment_text'] . '</p>';
+                    echo '</div></li>';
+                  }
+                } 
+                ?>
               </ul>
             </div>
           </div>

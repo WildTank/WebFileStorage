@@ -16,7 +16,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
   if (empty($user_name) && empty($user_pass)) {  // handles invalid field inputs
     echo '<script>alert("Please enter a valid username and password.")</script>';
   } else {
-    $accounts_query = "SELECT * FROM UserAccounts WHERE user_name='$user_name' AND user_pass='$user_pass'";
+    $accounts_query = "SELECT * FROM UserAccounts WHERE user_name='$user_name' AND user_pass='$user_pass';";
     $accounts_result = mysqli_query($conn, $accounts_query);
     if (mysqli_num_rows($accounts_result) === 1) {
       $account_row = mysqli_fetch_assoc($accounts_result);
@@ -25,7 +25,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
         $_SESSION['user_id'] = $account_row['user_id'];
         $_SESSION['user_name'] = $account_row['user_name'];
         $_SESSION['header_label'] = $_POST['user_name'] . '(' . $_SESSION['user_id'] . ')';
-        $settings_query = "SELECT * FROM UserSettings WHERE user_id=$_SESSION[user_id]";
+        $settings_query = "SELECT * FROM UserSettings WHERE user_id=$_SESSION[user_id];";
         $settings_result = mysqli_query($conn, $settings_query);
         if (mysqli_num_rows($settings_result) === 1) {
           $settings_values_row = mysqli_fetch_assoc($settings_result);
