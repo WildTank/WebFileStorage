@@ -11,7 +11,7 @@ if (!isset($_SESSION['recent_news_comments'])) {
   // 1 is for true and 0 is for false
   $_SESSION['recent_news_comments'] = '1';
   $_SESSION['recent_uploads'] = '1';
-  $_SESSION['recent_media'] = '1';
+  $_SESSION['media_files'] = '1';
   $_SESSION['dark_theme'] = '1';
 }
 ?>

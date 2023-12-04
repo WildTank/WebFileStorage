@@ -132,7 +132,7 @@ include_once './session.php';
                     // query is goofy, must use double quotes
                     $commenter_result = $conn->query($commenter_query);
                     echo '<p>' . $commenter_result->fetch_assoc()['user_name'] . '</p>';
-                    echo '<p>' . $row['comment_text'] . '</p>';
+                    echo '<p><i>' . $row['comment_text'] . '</i></p>';
                     echo '</div></li>';
                   }
                 } 
@@ -167,10 +167,10 @@ include_once './session.php';
           }
         ?>
         <?php 
-          $recent_medias_num = 6;
-          if ($_SESSION['recent_media'] === '1' && $recent_medias_num > 0) {
+          $media_files_num = 6;
+          if ($_SESSION['media_files'] === '1' && $media_files_num > 0) {
             echo '<section><div class="main-container">';
-            echo '<h1>Recent Media Files</h1>';
+            echo '<h1>Media Files</h1>';
             echo '<ul class="files-container">';
             $media_wrapper_comps = array (
               '<li class="file-wrapper">',
@@ -178,7 +178,7 @@ include_once './session.php';
               '<p>Upload Time</p>',
               '</li>'
             );
-            for ($i = 0; $i < $recent_medias_num; $i++) {
+            for ($i = 0; $i < $media_files_num; $i++) {
               foreach ($media_wrapper_comps as $component) {
                 echo $component;
               }

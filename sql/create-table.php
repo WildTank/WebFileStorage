@@ -23,7 +23,7 @@ $settings_query = // for user settings
     user_id INT PRIMARY KEY,
     recent_news_comments BOOLEAN NOT NULL,
     recent_uploads BOOLEAN NOT NULL,
-    recent_media BOOLEAN NOT NULL,
+    media_files BOOLEAN NOT NULL,
     dark_theme BOOLEAN NOT NULL,
     FOREIGN KEY (user_id) REFERENCES UserAccounts(user_id)
 );';
@@ -31,7 +31,7 @@ submit_query($conn, $settings_query, 'User settings table successfully created.'
 
 
 $settings_values_query = // for default user settings
-'INSERT INTO UserSettings (user_id, recent_news_comments, recent_uploads, recent_media, dark_theme)
+'INSERT INTO UserSettings (user_id, recent_news_comments, recent_uploads, media_files, dark_theme)
 VALUES
 (1, true, true, true, true),
 (2, false, false, false, false);';

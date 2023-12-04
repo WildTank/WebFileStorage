@@ -31,7 +31,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
           $settings_values_row = mysqli_fetch_assoc($settings_result);
           $_SESSION['recent_news_comments'] = $settings_values_row['recent_news_comments'];
           $_SESSION['recent_uploads'] = $settings_values_row['recent_uploads'];
-          $_SESSION['recent_media'] = $settings_values_row['recent_media'];
+          $_SESSION['media_files'] = $settings_values_row['media_files'];
           $_SESSION['dark_theme'] = $settings_values_row['dark_theme'];
         } else {
           echo '<script>alert("Database Error: No settings values for this account.")</script>';
@@ -68,10 +68,10 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
     <script> // for AJAX
       $(document).ready(function() {
         const switchClassesArr = [
-          "div.rec-news-comms", "div.rec-uploads", "div.rec-media", "div.dark-theme"
+          "div.rec-news-comms", "div.rec-uploads", "div.media-files", "div.dark-theme"
         ];
         const switchNamesArr = [
-          "recent_news_comments", "recent_uploads", "recent_media", "dark_theme"
+          "recent_news_comments", "recent_uploads", "media_files", "dark_theme"
         ];
         for (let i = 0; i < switchClassesArr.length; i++) {
           $(switchClassesArr[i]).click(function () {
@@ -84,8 +84,8 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
               case "recent_uploads":
                 switchValue = '<?php echo $_SESSION['recent_uploads'];?>';
                 break;
-              case "recent_media":
-                switchValue = '<?php echo $_SESSION['recent_media'];?>';
+              case "media_files":
+                switchValue = '<?php echo $_SESSION['media_files'];?>';
                 break;
               case "dark_theme":
                 switchValue = '<?php echo $_SESSION['dark_theme'];?>';
@@ -225,10 +225,10 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
               ?>"></div>
             </div>
             <div class="settings-option">
-              <p>Show Recent Media Files</p>
-              <div class="switch rec-media
+              <p>Show Media Files</p>
+              <div class="switch media-files
               <?php
-              if ($_SESSION['recent_media'] === '1') {
+              if ($_SESSION['media_files'] === '1') {
                 echo ' active-switch';
               }
               ?>"></div>
