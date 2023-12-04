@@ -62,7 +62,7 @@ nav {
     content: "";
     inset: 0;
     top: 100%;
-    background-image: linear-gradient(var(--dark-color-second), white);
+    background-image: linear-gradient(var(--dark-color-second), var(--shadow-color));
     opacity: 25%;
     animation: glow-fade-to-top 0.2s linear forwards;
     z-index: -1;

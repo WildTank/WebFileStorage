@@ -110,11 +110,13 @@ if (isset($_POST['user_name']) && isset($_POST['user_pass'])) {
           $("svg path").css("fill", targetColor);
           if (currentTheme === '1') {
             $(":root").css({
-            "--dark-color-second":"#fafafa", "--dark-color-third":"#d9d9d9", "--dark-color-fourth":"#b7b7b7"
+            "--dark-color-second":"#fafafa", "--dark-color-third":"#d9d9d9", "--dark-color-fourth":"#b7b7b7",
+            "--shadow-color":"black"
           });
           } else {
             $(":root").css({
-            "--dark-color-second":"#050505", "--dark-color-third":"#161616", "--dark-color-fourth":"#282828"
+            "--dark-color-second":"#050505", "--dark-color-third":"#161616", "--dark-color-fourth":"#282828",
+            "--shadow-color":"white"
           });
           }
           currentTheme = currentTheme==="1" ? "0" : "1";

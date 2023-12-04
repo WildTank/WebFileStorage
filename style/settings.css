@@ -21,7 +21,7 @@ aside > section:not(:last-child) {
     content: "";
     inset: 0;
     left: 100%;
-    background-image: linear-gradient(to left, white, var(--dark-color-second));
+    background-image: linear-gradient(to left, var(--shadow-color), var(--dark-color-second));
     opacity: 25%;
     animation: glow-fade-to-left 0.2s linear forwards;
     z-index: -1;
