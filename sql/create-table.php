@@ -50,7 +50,9 @@ $news_article_query = // for default news article
 'INSERT INTO NewsAnnouncements (details)
 VALUES
 ("~ This news is for testing and acts as a dummy article<br><br>~ Second portion of dummy news article :D"),
-("~ Newly created the website as a way to store both independent and dependent codes");';
+("~ Newly created the website as a way to store both independent and dependent codes"),
+("~ Bruhuhuhuhuhuhuhuhuhuhuh <br><br> ~ EEEEEEEEEEEEEEEEEEEEE <br><br> ~ Multiline news article test E <br><br> ~ Can you see me"),
+("~ This should be the most recent news");';
 submit_query($conn, $news_article_query, 'Default news articles added.');
 
 
