@@ -104,7 +104,8 @@ include_once './session.php';
             <p>LATEST NEWS</p>
             <ul>
               <?php
-              $news_query = "SELECT * FROM NewsAnnouncements;";
+              $news_query = "SELECT * FROM NewsAnnouncements WHERE issue_number!=3 ORDER BY issue_number DESC LIMIT 2;";
+              // added the where clause to make recent news look cleaner
               $result = $conn->query($news_query);
               if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {

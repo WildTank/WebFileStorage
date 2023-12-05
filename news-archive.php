@@ -80,31 +80,23 @@ include_once './session.php';;
       </nav>
     </header>
     <main>
-    <?php
-      $archive_item_comps = array(
-        '<div class="archive-item-wrapper">',
-        '<img src="./images/FileFrame.png" alt="Item Image" />',
-        '<div class="archive-item-text">',
-        '<p>ITEM TITLE</p>',
-        '<div class="archive-item-description">',
-        "<span>''</span>",
-        '<p>', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex,
-        esse? Quo totam optio, alias ratione exercitationem nam, harum
-        tempora eaque possimus laboriosam non necessitatibus commodi,
-        consectetur odio vitae perspiciatis iure ducimus! Ipsam minima,
-        ullam quis iure minus sint, saepe tempora, rerum facilis vel
-        recusandae nam sequi assumenda magnam consequatur sit.', '</p>',
-        "<span>''</span>",
-        '</div>', '</div>', '</div>'
-      );
-      ?>
       <div class="main-container">
         <h1>News and Announcements</h1>
         <?php
-        $archives_num = 3;
-        for ($i = 0; $i < $archives_num; $i++) {
-          foreach ($archive_item_comps as $component) {
-            echo $component;
+        $news_query = "SELECT * FROM NewsAnnouncements";
+        $result = $conn->query($news_query);
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            echo '<div class="archive-item-wrapper">';
+            echo '<img src="./images/NewsImage.png" alt="Item Image" />';
+            echo '<div class="archive-item-text">';
+            echo '<p> Article No: ' . $row['issue_number'] . '</p>';
+            echo '<div class="archive-item-description">';
+            echo '<p>';
+            echo $row['details'];
+            echo '</p>';
+            echo '</div>', '</div>', '</div>';
+
           }
         }
         ?>
